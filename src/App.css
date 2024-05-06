@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background: repeating-linear-gradient(
+    45deg,
+    hsl(11, 59%, 60%),
+    hsl(11, 59%, 60%) 10px,
+    hsl(25, 72%, 58%) 10px,
+    hsl(25, 72%, 58%) 20px
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* Board styling */
+.game-board {
+  width: 300px;
+  height: 300px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  animation: boardFadeIn 0.5s ease;
+}
+
+.game-board {
+  border: 2px solid #333;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  animation: boardFadeIn 0.5s ease;
+}
+/* Board fade in animation */
+@keyframes boardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Row styling */
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/* Square styling */
+.square {
+  background: #ffffff;
+  border: 1px solid #333;
+  float: left;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 100px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.square:hover {
+  background-color: hsla(0, 0%, 94%, 0.613);
+  transform: scale(1.1);
+}
+
+.square:focus {
+  outline: none;
+}
+/* Square color styling */
+.square.X {
+  color: red;
+}
+
+.square.O {
+  color: blue;
+}
+/* Game info styling */
+.status {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: statusPulse 1s ease infinite alternate;
+}
+/* Status pulse animation */
+@keyframes statusPulse {
+  from {
+    font-size: 24px;
+  }
+  to {
+    font-size: 26px;
+  }
+}
+
+.game-info {
+  margin-top: 20px;
+}
+/* Moves list styling */
+.moves-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.moves-list li {
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.moves-list li button {
+  background-color: #893d0a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.moves-list li button:hover {
+  background-color: #badfa7;
+}
+
+.button {
+  background-color: hwb(0 17% 25%);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.button:focus {
+  outline: none;
+}
